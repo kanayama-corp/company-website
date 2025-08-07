@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Google Meet Brightness Filter",
+  "version": "1.0",
+  "description": "Add brightness control to Google Meet video calls",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://meet.google.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ]
+}
