@@ -162,9 +162,16 @@ body {
 
 .hero-buttons {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.hero-buttons .btn {
+    width: 100%;
+    text-align: center;
 }
 
 
@@ -1052,5 +1059,4 @@ section {
   font-size: 12px;
   font-weight: 500;
   cursor: pointer;
->>>>>>> c47e6a7662105cbc87e1a1bf7c73ee7acb14beb0
 }
