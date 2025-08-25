@@ -1,9 +1,15 @@
 // Smooth scrolling for navigation links
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+        // Do not prevent default for external links or links with no href
+        if (this.getAttribute('href') === '#' || this.getAttribute('target') === '_blank') {
+            return;
+        }
+
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
+            e.preventDefault();
             const headerOffset = 80;
             const elementPosition = target.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
